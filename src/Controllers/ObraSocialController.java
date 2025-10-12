@@ -26,7 +26,7 @@ public class ObraSocialController {
         ArrayList<ObraSocial> listaOS = new ArrayList();
         try {
             this.conexion.conectar();
-            String consulta = "select o.idObraSocial, o.nombreObraSocial from obrasocial as o;";
+            String consulta = "select o.idobraSocial, o.nombreObraSocial from obrasocial as o;";
             PreparedStatement st = this.conexion.getConexion().prepareStatement(consulta);
             ResultSet rs = st.executeQuery();
 
@@ -70,7 +70,7 @@ public class ObraSocialController {
     public String getObraSocial(int id) {
         try {
             this.conexion.conectar();
-            String consulta = "select obraSocial.nombreObraSocial from obraSocial where obrasocial.idObraSocial = ?;";
+            String consulta = "select obrasocial.nombreObraSocial from obrasocial where obrasocial.idobraSocial = ?;";
             PreparedStatement st = this.conexion.getConexion().prepareStatement(consulta);
             st.setInt(1, id);
             ResultSet rs = st.executeQuery();

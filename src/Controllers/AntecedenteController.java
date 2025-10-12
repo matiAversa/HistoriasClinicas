@@ -46,7 +46,7 @@ public class AntecedenteController {
         
         try{
             this.conexion.conectar();
-            String consulta = "insert into antecedentePersonal (idAntecedente, idPaciente) values (?, ?);";
+            String consulta = "insert into antecedentepersonal (idAntecedente, idPaciente) values (?, ?);";
             PreparedStatement st = this.conexion.getConexion().prepareStatement(consulta);
             for (Integer idA : lista){
                 st.setInt(1,idA);
@@ -64,7 +64,7 @@ public class AntecedenteController {
         
         try{
             this.conexion.conectar();
-            String consulta = "insert into antecedenteFamiliar (idAntecedente, idPaciente, idFamiliar) values (?, ?, ?);";
+            String consulta = "insert into antecedentefamiliar (idAntecedente, idPaciente, idFamiliar) values (?, ?, ?);";
             PreparedStatement st = this.conexion.getConexion().prepareStatement(consulta);
             for (Integer idA : lista){
                 st.setInt(1,idA);
@@ -84,7 +84,7 @@ public class AntecedenteController {
         try{
             this.conexion.conectar();
             String consulta = "select a.nombreAntecedente "
-                    + "from antecedente as a inner join antecedentePersonal as ap on (a.idAntecedente=ap.idAntecedente) "
+                    + "from antecedente as a inner join antecedentepersonal as ap on (a.idAntecedente=ap.idAntecedente) "
                     + "where ap.idPaciente = ?;";
             PreparedStatement st = this.conexion.getConexion().prepareStatement(consulta);
             st.setInt(1,id);
@@ -106,7 +106,7 @@ public class AntecedenteController {
         try{
             this.conexion.conectar();
             String consulta = "select a.nombreAntecedente "
-                    + "from antecedente as a inner join antecedenteFamiliar as af on (a.idAntecedente=af.idAntecedente) "
+                    + "from antecedente as a inner join antecedentefamiliar as af on (a.idAntecedente=af.idAntecedente) "
                     + "where af.idPaciente = ? and af.idFamiliar = ?;";
             PreparedStatement st = this.conexion.getConexion().prepareStatement(consulta);
             st.setInt(1,id);

@@ -278,20 +278,23 @@ public class AntecedentesPersonales extends javax.swing.JFrame {
                 .filter(ch -> ch.isSelected())
                 .map(ch -> this.mapAnt.get(ch.getText()))
                 .collect(Collectors.toList());
-        this.Acontroller.AgregarAntecedentesFamiliares(listaIdMadre, 4, this.idp);
+        this.Acontroller.AgregarAntecedentesFamiliares(listaIdMadre, 7, this.idp);
+        //hardcodeado porque en la DB tengo los familiares con esos id
 
         List<Integer> listaIdPadre = this.listaPadre.stream()
                 .filter(ch -> ch.isSelected())
                 .map(ch -> this.mapAnt.get(ch.getText()))
                 .collect(Collectors.toList());
-        this.Acontroller.AgregarAntecedentesFamiliares(listaIdPadre, 5, this.idp);
-
+        this.Acontroller.AgregarAntecedentesFamiliares(listaIdPadre, 8, this.idp);
+        //hardcodeado porque en la DB tengo los familiares con esos id
+        
         List<Integer> listaIdAbuelo = this.listaAbuelo.stream()
                 .filter(ch -> ch.isSelected())
                 .map(ch -> this.mapAnt.get(ch.getText()))
                 .collect(Collectors.toList());
-        this.Acontroller.AgregarAntecedentesFamiliares(listaIdAbuelo, 6, this.idp);
-
+        this.Acontroller.AgregarAntecedentesFamiliares(listaIdAbuelo, 9, this.idp);
+        //hardcodeado porque en la DB tengo los familiares con esos id
+        
         this.setVisible(false);
         this.anterior.cerrar();
         this.dispose();

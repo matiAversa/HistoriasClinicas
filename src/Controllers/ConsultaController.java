@@ -63,7 +63,7 @@ public class ConsultaController {
                 this.conexion.conectar();
                 ResultSet rs;
                 for (PruebaLaboratorio dato : lista) {
-                    String consulta1 = "select iddatoLaboratorio from datoLaboratorio where nombreDato = ?;";
+                    String consulta1 = "select iddatoLaboratorio from datolaboratorio where nombreDato = ?;";
                     PreparedStatement st = this.conexion.getConexion().prepareStatement(consulta1);
                     st.setString(1, dato.getNombre());
                     rs = st.executeQuery();
@@ -120,7 +120,7 @@ public class ConsultaController {
         List<Consulta> listaconsultas = new ArrayList<Consulta>();
         try {
             this.conexion.conectar();
-            String consulta = "select * from Consulta as c inner join DatosConsulta as dc on (c.idDatosConsulta = dc.idDatosConsulta)"
+            String consulta = "select * from consulta as c inner join datosconsulta as dc on (c.idDatosConsulta = dc.idDatosConsulta)"
                     + " where c.idPaciente = ?;";
             PreparedStatement st = this.conexion.getConexion().prepareStatement(consulta);
             st.setInt(1, id);
@@ -164,7 +164,7 @@ public class ConsultaController {
             this.conexion.conectar();
             String consulta = "select d.nombreDato, cd.Valor "
                             + "from consultadatolab as cd "
-                                + "inner join DatoLaboratorio as d on (cd.idDatoLab=d.idDatoLaboratorio) "
+                                + "inner join datolaboratorio as d on (cd.idDatoLab=d.idDatoLaboratorio) "
                             + "where idConsulta = ?;";
             PreparedStatement st = this.conexion.getConexion().prepareStatement(consulta);
             st.setInt(1, id);

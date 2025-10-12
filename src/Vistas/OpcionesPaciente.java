@@ -33,7 +33,6 @@ public class OpcionesPaciente extends javax.swing.JFrame {
     
     private void inicializarListaConsultas (){
         List <Consulta> listaConsultas = consultaController.getConsultas(id);
-        System.out.println(this.id);
         Consulta [] ArrayConsultas = listaConsultas.toArray(new Consulta [0]);
         ListaCons.setListData(ArrayConsultas);
         

@@ -109,11 +109,14 @@ public class PacienteController {
         String info = "Antecedentes Personales: ";
         info += ac.AntecedentesPersonales(id);
         info += "Antecedentes Familiares (Madre): ";
-        info += ac.AntecedentesFamiliares(id, 4);
+        info += ac.AntecedentesFamiliares(id, 7);
+        //hardcodeo porque en la DB lo tengo asi.
         info += "Antecedentes Familiares (Padre): ";
-        info += ac.AntecedentesFamiliares(id, 5);
+        info += ac.AntecedentesFamiliares(id, 8);
+        //hardcodeo porque en la DB lo tengo asi.
         info += "Antecedentes Familiares (Abuelo/a): ";
-        info += ac.AntecedentesFamiliares(id, 6);
+        info += ac.AntecedentesFamiliares(id, 9);
+        //hardcodeo porque en la DB lo tengo asi.
         return info;
     }
 

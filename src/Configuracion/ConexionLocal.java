@@ -19,7 +19,7 @@ import java.util.logging.Logger;
  */
 public class ConexionLocal{
 
-    private String url = "jdbc:mysql://localhost/database-HistoriasClinicas";
+    private String url = "jdbc:mysql://localhost/database_HistoriasClinicas";
     private String usuario = "root";
     private String clave = "passsqlnote";
     private Connection conexion;

@@ -56,7 +56,9 @@ public class ObraSocialController {
             ResultSet rs = st.getGeneratedKeys();
             int aux = -1;
             if (rs.next()) {
-                aux = rs.getInt("idObraSocial");
+                System.out.println("entro al next");
+                aux = rs.getInt(1);
+                System.out.println("paso por el next");
             }
             this.conexion.desconectar();
             return aux;
